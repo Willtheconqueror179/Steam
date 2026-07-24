@@ -1,19 +1,55 @@
 :root {
-    --st-accent-1: 102, 108, 255;
-    --st-accent-2: 135, 140, 255;
-    --st-color-1: 17, 17, 17;
-    --st-color-2: 30, 30, 30;
-    --st-color-3: 20, 20, 20;
-    --st-color-4: 24, 24, 24;
-    --st-color-5: 38, 41, 44;
-    --st-color-6: 38, 38, 41;
-    --st-background: 10, 10, 10;
-    --st-red: 240, 74, 74;
-    --st-red-hover: 242, 99, 99;
-    --st-green: 36, 166, 90;
-    --st-green-hover: 39, 185, 100;
-    --st-blue: 75, 137, 239;
-    --st-blue-hover: 100, 154, 242;
-    --st-yellow: 239, 141, 75;
-    --st-yellow-hover: 239, 141, 75;
+    /*
+     * @name Ether
+     * @description Primary Xenoblade interface accent.
+     */
+    --st-accent-1: 41, 200, 239;
+
+    /*
+     * @name Ether Highlight
+     * @description Bright hover and focus color.
+     */
+    --st-accent-2: 143, 239, 255;
+
+    /*
+     * @name Night Surface
+     * @description Main raised surface.
+     */
+    --st-color-1: 7, 18, 37;
+
+    /*
+     * @name Deep Panel
+     * @description Secondary raised surface.
+     */
+    --st-color-2: 16, 41, 71;
+
+    --st-color-3: 10, 27, 51;
+    --st-color-4: 13, 34, 60;
+    --st-color-5: 24, 59, 93;
+    --st-color-6: 20, 45, 75;
+
+    /*
+     * @name Background
+     * @description Deep EtherLink background.
+     */
+    --st-background: 5, 13, 28;
+
+    /*
+     * @name Monado Red
+     * @description Destructive actions and selected-game accent.
+     */
+    --st-red: 213, 31, 56;
+    --st-red-hover: 255, 64, 84;
+
+    --st-green: 41, 200, 239;
+    --st-green-hover: 143, 239, 255;
+    --st-blue: 41, 200, 239;
+    --st-blue-hover: 143, 239, 255;
+
+    /*
+     * @name Achievement Gold
+     * @description Achievements and attention indicators.
+     */
+    --st-yellow: 228, 189, 88;
+    --st-yellow-hover: 247, 216, 120;
 }

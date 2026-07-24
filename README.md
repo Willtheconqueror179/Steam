@@ -1,173 +1,58 @@
-<div align="center">
-<h3><img height="76px" src="https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/logo.webp"></h3>
+# EtherLink — Xenoblade
 
-[Community](https://discord.spacetheme.net) | [Support the Poject](https://kofi.spacetheme.net) | [Website](https://spacetheme.net)
+A Xenoblade-inspired Steam redesign built on the excellent
+[SpaceTheme/Steam](https://github.com/SpaceTheme/Steam) framework.
 
-![GitHub Org's stars](https://img.shields.io/github/stars/SpaceTheme?style=for-the-badge&logo=github&labelColor=%23111111&color=%231e1e1e)
-<hr>
-</div>
+EtherLink preserves SpaceTheme's mature layouts and plugin compatibility while
+reworking its visual language around deep navy interfaces, cyan Ether lighting,
+Monado-red active states, gold achievement accents, angular panels, and a
+subtle configurable Ether grid.
 
-![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/preview.webp)
-<details>
-    <summary>More images (10. Nov. 2025)</summary>
+## Features
 
-|  Library home  |  Library gamepage  |
-|  :---:  |  :---:  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/libHome.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/libGamepage.webp)  |
-|  **Store**  |  **Store Gamepage**  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/storePage.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/storeGamepage.webp)  |
-|  **Store Wishlist**  |  **Store Cart**  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/storeWishlist.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/storeCart.webp)  |
-|  **Store News**  |  **Community**  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/storeNews.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/communityPage.webp)  |
-|  **Friend list & Chat**  |    |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/friendAndChat.webp)  |    |
-</details>
-<details>
-    <summary>More images (Concepts)</summary>
-
-|  Library home  |  Library gamepage  |
-|  :---:  |  :---:  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/concepts/conceptLibHome.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/concepts/conceptLibGamepage.webp)  |
-|  **Store**  |  **Store gamepage**  |
-|  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/concepts/conceptStorePage.webp)  |  ![Preview](https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/concepts/conceptStoreGamepage.webp)  |
-</details>
+- Library, game pages, downloads, Store, Community, Friends, chat, settings,
+  menus, dialogs, notifications, and overlays
+- Ether cyan and Monado red palette
+- Angular sci-fi panels without altering Steam's clickable regions
+- Adjustable Ether glow: Low, Standard, or High
+- Optional ambient grid
+- Millennium color editor support
+- Existing SpaceTheme layout and customization options
+- HLTB for Steam and Size on Disk plugin compatibility inherited from
+  SpaceTheme
+- Reduced-motion support and responsive glow reduction
 
 ## Installation
-1. Download [Millennium](https://docs.steambrew.app/users/installing) and follow the provided instructions to install the patcher.
-1. Open the [Theme Page](https://steambrew.app/theme?id=zQndv1rI0FXLh3QTRgOL) and click the Copy Theme ID button.
-1. Navigate to the Theme tab in the Millennium settings and select "Install Theme" and paste the Theme ID.
 
-**Voilà! Enjoy the new look of your Steam!**
+1. Install [Millennium](https://docs.steambrew.app/users/getting-started/installation).
+2. Download this repository as a ZIP.
+3. Extract the repository folder into:
+   `C:\Program Files (x86)\Steam\steamui\skins\`
+4. Open `Steam > Millennium > Themes`.
+5. Select `EtherLink — Xenoblade` and reload Steam.
 
-## Info
-- Some things only work properly when steam is maximized on a 1920x1080p (or higher) monitor.
-  - Smaller monitors may be properly supported later
+If Steam is installed elsewhere, use that installation's `steamui\skins`
+directory.
 
-## Fully supported plugins
-- [HLTB for Steam](https://steambrew.app/plugin?id=f685622bace6)
-- [Size on Disk](https://steambrew.app/plugin?id=e73371b61eef)
+## Customization
 
-## Roadmap
-<details>
-  <summary>Store</summary>
-  
-  - [ ] Home
-  - [ ] (WIP) Navbar
-  - [ ] Discovery
-  - [ ] (WIP) Pointshop
-  - [ ] Charts
-  - [ ] (WIP) Gamepage
-  - [ ] Bundle info
-  - [ ] Hardware page
-  - [ ] The Steam Awards page
-  - [ ] Steam Replay page
-  - [ ] Steam Labs page
-  - [ ] Tags page
-  - [ ] Community recommends page
-  - [ ] Interactive recommender page
-  - [ ] Among friends page
-  - [ ] Steam curators page
-  - [ ] Gift cards page
-  - [x] Cart
-  - [ ] Wishlist rework
-  - [ ] (WIP) Checkout
-  - [ ] Categories page
-  - [ ] Personal calendar
-  - [x] Search result list page
-  - [ ] Settings
-</details>
-<details>
-  <summary>Library</summary>
+Open the theme editor in Millennium. The **Xenoblade** tab controls glow
+strength and the ambient grid. The existing SpaceTheme tabs continue to control
+the sidebar, Library layout, Store width, game-page presentation, fonts, and
+other interface options.
 
-  - [ ] (WIP) Collection page
-  - [ ] Gamepage rework
-</details>
-<details>
-  <summary>Community</summary>
+## Design notes
 
-  - [ ] Home
-  - [ ] Gamepage
-    - [ ] Screenshots
-    - [ ] Artworks
-    - [ ] Guides
-    - [ ] News
-    - [ ] Reviews
-    - [ ] Videos
-    - [ ] Workshop
-      - [ ] Item page
-  - [ ] Discussions
-  - [ ] Workshop
-  - [ ] Market
-    - [ ] Home
-    - [ ] Item page
-  - [ ] Broadcast
-</details>
-<details>
-  <summary>User</summary>
+The Xenoblade layer is loaded after SpaceTheme's normal patches. It changes
+visual styling while deliberately avoiding scaled controls, translated buttons,
+or other geometry changes that can move hitboxes away from visible elements.
 
-  - [ ] Profile
-  - [ ] Activity
-  - [ ] Friends
-  - [ ] Content (User's screenshots/artworks/videos/...)
-  - [x] Awards 
-  - [ ] (WIP) Badges
-  - [ ] Inventory
-  - [ ] Booster Pack Creator
-</details>
-<details>
-  <summary>Friends & Chat</summary>
+## Credits and license
 
-  - [x] Compact mode support
-  - [ ] Chat
-  - [ ] Group chat
-</details>
-<details>
-  <summary>Big Picture Mode</summary>
+- Original SpaceTheme framework by
+  [SpaceEnergy and contributors](https://github.com/SpaceTheme/Steam)
+- Xenoblade-inspired EtherLink conversion by Willtheconqueror179 with OpenAI
+- Released under the original project's MIT License
 
-  - [ ] Home
-  - [ ] Sidebar
-  - [ ] Gamepage
-  - [ ] Library
-  - [ ] Store
-  - [ ] Friends & Chat
-  - [ ] Media
-  - [ ] Downloads
-  - [ ] Settings
-</details>
-<details>
-  <summary>Overlay</summary>
-  
-  - [ ] Game Overview
-  - [ ] Achievements
-  - [ ] Notes
-  - [ ] Clock
-  - [ ] Guides
-  - [ ] Discussions
-  - [ ] Recordings & Screenshots
-  - [ ] Browser
-  - [ ] Controller Settings
-</details>
-<details>
-  <summary>Other</summary>
-
-  - [ ] (WIP) Notifications
-  - [ ] (WIP) Steam Settings
-  - [ ] (WIP) Inputs
-    - [ ] (WIP) Button
-    - [ ] Dropdown
-    - [ ] Search
-    - [ ] (WIP) Color
-    - [x] Emoji picker
-    - [ ] Checkbox
-      - [x] Checkbox Switch
-    - [ ] (WIP) Radio
-    - [x] Radiogroup
-    - [ ] (WIP) Range
-  - [ ] Recordings & Screenshots
-  - [x] Special Offers
-  - [ ] Game server window
-  - [ ] Players window
-  - [ ] Add non-steam game window
-  - [x] About Steam window
-</details>
+This is an unofficial fan-made theme and is not affiliated with Nintendo,
+Monolith Soft, Valve, or the Millennium project.

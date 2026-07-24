@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
+  <title id="title">EtherLink — Xenoblade</title>
+  <desc id="desc">A navy science-fiction banner with cyan Ether lines and a red energy blade.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050d1c"/>
+      <stop offset=".55" stop-color="#102947"/>
+      <stop offset="1" stop-color="#211227"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#7e1028"/>
+      <stop offset=".48" stop-color="#d51f38"/>
+      <stop offset="1" stop-color="#ff6577"/>
+    </linearGradient>
+    <linearGradient id="ether" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#087aa6"/>
+      <stop offset=".5" stop-color="#29c8ef"/>
+      <stop offset="1" stop-color="#8fefff"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#8fefff" stop-opacity=".42"/>
+      <stop offset=".45" stop-color="#29c8ef" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#29c8ef" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#29c8ef" stroke-opacity=".09"/>
+    </pattern>
+    <filter id="cyanGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="redGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="320" fill="url(#night)"/>
+  <rect width="1280" height="320" fill="url(#grid)"/>
+  <ellipse cx="230" cy="120" rx="370" ry="280" fill="url(#halo)"/>
+
+  <g opacity=".55" fill="none" stroke="url(#ether)">
+    <path d="M-40 270C150 214 246 286 418 209S697 98 885 136 1122 245 1320 154" stroke-width="2"/>
+    <path d="M-25 290C166 234 261 305 432 229S710 119 899 156 1137 264 1335 175" stroke-width="1"/>
+    <path d="M-55 248C135 192 231 264 402 188S682 77 870 115 1107 224 1305 133" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(1020 155) rotate(-24)">
+    <circle r="103" fill="none" stroke="#29c8ef" stroke-opacity=".16" stroke-width="18"/>
+    <circle r="77" fill="none" stroke="#8fefff" stroke-opacity=".55" stroke-width="3" filter="url(#cyanGlow)"/>
+    <path d="M-17 170L-27 26-12-68 0-126 12-68 27 26 17 170 0 198Z" fill="url(#blade)" stroke="#ff6577" stroke-width="2" filter="url(#redGlow)"/>
+    <circle r="22" fill="#071225" stroke="#8fefff" stroke-width="3"/>
+    <path d="M-9 0L0-12 9 0 0 12Z" fill="#29c8ef" filter="url(#cyanGlow)"/>
+  </g>
+
+  <g transform="translate(74 86)">
+    <path d="M0 0H514L492 10H0Z" fill="#29c8ef" opacity=".75"/>
+    <path d="M0 134H420L398 144H0Z" fill="#d51f38" opacity=".75"/>
+    <text y="73" fill="#edf9ff" font-family="Bahnschrift, Segoe UI, sans-serif" font-size="72" font-weight="700" letter-spacing="6">ETHERLINK</text>
+    <text x="4" y="117" fill="#8fefff" font-family="Segoe UI, sans-serif" font-size="23" letter-spacing="11">XENOBLADE // STEAM</text>
+  </g>
+
+  <path d="M0 314H820L850 320H0Z" fill="#29c8ef"/>
+  <path d="M850 320L905 304H1280V320Z" fill="#d51f38"/>
+</svg>

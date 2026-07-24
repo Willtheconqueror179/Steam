@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">EtherLink Xenoblade Steam theme preview</title>
+  <desc id="desc">Stylized Steam library interface using navy panels, cyan Ether highlights, and Monado red controls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050d1c"/>
+      <stop offset=".56" stop-color="#102947"/>
+      <stop offset="1" stop-color="#241425"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#071225"/>
+      <stop offset=".55" stop-color="#102947"/>
+      <stop offset="1" stop-color="#25152b"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4054"/>
+      <stop offset="1" stop-color="#a71332"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#29c8ef" stroke-opacity=".07"/>
+    </pattern>
+    <filter id="cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="red" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="22" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="22" fill="url(#grid)"/>
+  <rect width="1600" height="82" rx="22" fill="url(#top)"/>
+  <path d="M0 81H1020" stroke="#29c8ef" stroke-width="2" filter="url(#cyan)"/>
+  <path d="M1020 81H1600" stroke="#d51f38" stroke-width="2" filter="url(#red)"/>
+
+  <g font-family="Segoe UI, sans-serif">
+    <text x="36" y="51" fill="#edf9ff" font-family="Bahnschrift, sans-serif" font-size="28" font-weight="700" letter-spacing="4">ETHERLINK</text>
+    <text x="310" y="51" fill="#8fefff" font-size="19" letter-spacing="2">STORE</text>
+    <text x="408" y="51" fill="#8fefff" font-size="19" letter-spacing="2">LIBRARY</text>
+    <text x="532" y="51" fill="#8eacbc" font-size="19" letter-spacing="2">COMMUNITY</text>
+    <circle cx="1508" cy="40" r="14" fill="#29c8ef" opacity=".85"/>
+    <rect x="1540" y="31" width="25" height="18" rx="3" fill="none" stroke="#8fefff"/>
+  </g>
+
+  <rect x="0" y="82" width="315" height="818" fill="#071225" fill-opacity=".92"/>
+  <path d="M314 82V900" stroke="#29c8ef" stroke-opacity=".48"/>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="22" y="105" width="271" height="42" rx="7" fill="#102947" stroke="#29c8ef" stroke-opacity=".35"/>
+    <text x="45" y="133" fill="#8eacbc" font-size="17">Search your library</text>
+    <text x="23" y="186" fill="#8fefff" font-size="15" font-weight="700" letter-spacing="2">FAVORITES</text>
+
+    <g font-size="18">
+      <rect x="15" y="205" width="286" height="48" rx="7" fill="#d51f38" fill-opacity=".31"/>
+      <rect x="15" y="205" width="4" height="48" fill="#ff4054"/>
+      <circle cx="42" cy="229" r="12" fill="#d51f38"/>
+      <text x="68" y="236" fill="#edf9ff">Xenoblade Chronicles</text>
+
+      <circle cx="42" cy="283" r="12" fill="#29c8ef" fill-opacity=".55"/>
+      <text x="68" y="290" fill="#c5dae5">Persona 5 Royal</text>
+
+      <circle cx="42" cy="337" r="12" fill="#29c8ef" fill-opacity=".55"/>
+      <text x="68" y="344" fill="#c5dae5">Eighty Six</text>
+    </g>
+
+    <text x="23" y="398" fill="#8eacbc" font-size="15" font-weight="700" letter-spacing="2">COLLECTIONS</text>
+    <g fill="#c5dae5" font-size="18">
+      <text x="34" y="442">JRPG</text>
+      <text x="34" y="490">Strategy</text>
+      <text x="34" y="538">Science Fiction</text>
+      <text x="34" y="586">Favorites</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="338" y="104" width="1238" height="370" rx="12" fill="#102947" stroke="#29c8ef" stroke-opacity=".28"/>
+    <path d="M338 104H1576V474H338Z" fill="url(#bg)" opacity=".62"/>
+    <ellipse cx="1190" cy="130" rx="410" ry="230" fill="#29c8ef" opacity=".08"/>
+    <path d="M1120 432C1250 292 1375 226 1580 198V474H1055Z" fill="#d51f38" opacity=".13"/>
+    <path d="M1180 448L1358 162" stroke="#ff4054" stroke-width="18" stroke-linecap="round" filter="url(#red)"/>
+    <circle cx="1358" cy="162" r="48" fill="none" stroke="#8fefff" stroke-width="3" filter="url(#cyan)"/>
+    <circle cx="1358" cy="162" r="22" fill="#071225" stroke="#29c8ef" stroke-width="2"/>
+
+    <text x="382" y="205" fill="#edf9ff" font-family="Bahnschrift, sans-serif" font-size="53" font-weight="700" letter-spacing="2">XENOBLADE</text>
+    <text x="385" y="248" fill="#8fefff" font-family="Segoe UI, sans-serif" font-size="20" letter-spacing="7">THE FUTURE IS OURS TO DECIDE</text>
+    <rect x="382" y="298" width="210" height="63" rx="10" fill="url(#play)" stroke="#ff6577" filter="url(#red)"/>
+    <text x="454" y="339" fill="#fff" font-family="Bahnschrift, sans-serif" font-size="25" font-weight="700" letter-spacing="2">PLAY</text>
+    <rect x="608" y="298" width="63" height="63" rx="10" fill="#102947" stroke="#29c8ef" stroke-opacity=".55"/>
+    <path d="M628 329H651M640 317V341" stroke="#8fefff" stroke-width="3"/>
+  </g>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="338" y="497" width="792" height="379" rx="12" fill="#102947" fill-opacity=".72" stroke="#29c8ef" stroke-opacity=".20"/>
+    <text x="370" y="542" fill="#edf9ff" font-family="Bahnschrift, sans-serif" font-size="23" font-weight="700" letter-spacing="3">RECENT ACTIVITY</text>
+    <path d="M370 560H1095" stroke="#29c8ef" stroke-opacity=".26"/>
+
+    <rect x="370" y="586" width="220" height="140" rx="8" fill="#183b5d"/>
+    <path d="M371 699L455 625 505 671 590 602V726H370Z" fill="#29c8ef" opacity=".25"/>
+    <circle cx="530" cy="620" r="18" fill="#e4bd58" opacity=".8"/>
+
+    <text x="620" y="617" fill="#8fefff" font-size="17" font-weight="700">ACHIEVEMENT UNLOCKED</text>
+    <text x="620" y="654" fill="#edf9ff" font-size="24">The Future Is Ours</text>
+    <text x="620" y="687" fill="#8eacbc" font-size="17">Defied fate and completed the final chapter.</text>
+    <rect x="620" y="710" width="430" height="7" rx="4" fill="#071225"/>
+    <rect x="620" y="710" width="344" height="7" rx="4" fill="#29c8ef" filter="url(#cyan)"/>
+  </g>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="1154" y="497" width="422" height="379" rx="12" fill="#102947" fill-opacity=".72" stroke="#29c8ef" stroke-opacity=".20"/>
+    <text x="1185" y="542" fill="#edf9ff" font-family="Bahnschrift, sans-serif" font-size="23" font-weight="700" letter-spacing="3">GAME INFO</text>
+    <path d="M1185 560H1545" stroke="#29c8ef" stroke-opacity=".26"/>
+    <g font-size="17">
+      <text x="1185" y="611" fill="#8eacbc">PLAY TIME</text><text x="1458" y="611" fill="#8fefff">84.6 h</text>
+      <text x="1185" y="661" fill="#8eacbc">ACHIEVEMENTS</text><text x="1468" y="661" fill="#e4bd58">41 / 50</text>
+      <text x="1185" y="711" fill="#8eacbc">LAST PLAYED</text><text x="1427" y="711" fill="#c5dae5">Today</text>
+    </g>
+    <rect x="1185" y="758" width="360" height="72" rx="8" fill="#071225" stroke="#d51f38" stroke-opacity=".55"/>
+    <text x="1212" y="789" fill="#ff6577" font-size="15" font-weight="700" letter-spacing="2">ETHER STATUS</text>
+    <text x="1212" y="815" fill="#edf9ff" font-size="18">Link stable // combat ready</text>
+  </g>
+
+  <path d="M0 894H1030L1070 900H0Z" fill="#29c8ef"/>
+  <path d="M1070 900L1130 886H1600V900Z" fill="#d51f38"/>
+</svg>

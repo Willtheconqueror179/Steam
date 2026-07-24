@@ -1,0 +1,754 @@
+/*
+ * EtherLink — Xenoblade
+ * Final visual override for SpaceTheme/Steam.
+ *
+ * This layer intentionally avoids transforms and altered hitbox geometry.
+ * It changes color, lighting, borders, typography, and surface treatment
+ * while preserving SpaceTheme's tested layout and interactive regions.
+ */
+
+:root {
+    --xeno-ether: 41, 200, 239;
+    --xeno-ether-hot: 143, 239, 255;
+    --xeno-ether-deep: 8, 122, 166;
+    --xeno-monado: 213, 31, 56;
+    --xeno-monado-hot: 255, 64, 84;
+    --xeno-gold: 228, 189, 88;
+    --xeno-night: 7, 18, 37;
+    --xeno-panel: 16, 41, 71;
+    --xeno-raised: 24, 59, 93;
+    --xeno-text: 237, 249, 255;
+    --xeno-muted: 142, 172, 188;
+
+    --xeno-glow-alpha: .32;
+    --xeno-glow-size: 16px;
+    --xeno-grid-opacity: .10;
+    --xeno-panel-alpha: .90;
+
+    --xeno-cut: 12px 3px 12px 3px;
+    --xeno-cut-small: 7px 2px 7px 2px;
+    --xeno-border: rgba(var(--xeno-ether), .42);
+    --xeno-border-hot: rgba(var(--xeno-ether-hot), .82);
+    --xeno-red-border: rgba(var(--xeno-monado), .68);
+    --xeno-shadow: 0 16px 42px rgba(0, 0, 0, .38);
+    --xeno-ether-glow:
+        0 0 var(--xeno-glow-size)
+        rgba(var(--xeno-ether), var(--xeno-glow-alpha));
+    --xeno-red-glow:
+        0 0 var(--xeno-glow-size)
+        rgba(var(--xeno-monado), var(--xeno-glow-alpha));
+}
+
+html,
+body {
+    color: rgb(var(--xeno-text)) !important;
+    background-color: rgb(var(--xeno-night)) !important;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif !important;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    pointer-events: none;
+    opacity: var(--xeno-grid-opacity);
+    background-image:
+        linear-gradient(rgba(var(--xeno-ether), .18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--xeno-ether), .18) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+::selection {
+    color: rgb(var(--xeno-text));
+    background: rgba(var(--xeno-ether), .34);
+}
+
+* {
+    scrollbar-color:
+        rgb(var(--xeno-ether-deep))
+        rgba(var(--xeno-night), .72);
+}
+
+*::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            rgb(var(--xeno-ether-deep)),
+            rgb(var(--xeno-monado))
+        ) !important;
+    border-color: transparent !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--xeno-ether-hot), .16);
+}
+
+/* Core surfaces -------------------------------------------------- */
+
+body::before,
+#root,
+.DesktopUI,
+.friendsui-container,
+[class*="libraryroot_LibraryRoot"],
+[class*="libraryroot_Container"],
+[class*="library_Container"] {
+    background-color: rgb(var(--xeno-night)) !important;
+}
+
+.DesktopUI,
+[class*="libraryroot_LibraryRoot"],
+[class*="libraryroot_Container"] {
+    background-image:
+        radial-gradient(
+            circle at 14% -8%,
+            rgba(var(--xeno-ether), .17),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 96% 108%,
+            rgba(var(--xeno-monado), .14),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(var(--xeno-night), .98),
+            rgba(10, 28, 53, .97) 58%,
+            rgba(25, 17, 39, .98)
+        ) !important;
+}
+
+[class*="Panel"],
+[class*="panel_"],
+[class*="Dialog"],
+[class*="dialog_"],
+[class*="Modal"],
+[class*="modal_"] {
+    border-color: rgba(var(--xeno-ether), .22) !important;
+}
+
+h1,
+h2,
+h3,
+[class*="Header"],
+[class*="header_"],
+[class*="Title"],
+[class*="title_"] {
+    text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+[class*="sectionheader_"],
+[class*="SectionHeader"],
+[class*="gamelistsectionheader_"] {
+    font-family: "Bahnschrift", "Segoe UI Variable", sans-serif !important;
+    letter-spacing: .045em !important;
+}
+
+/* Angular surface language -------------------------------------- */
+
+button,
+input,
+select,
+textarea,
+[role="button"],
+[class*="Button"],
+[class*="button_"],
+[class*="Card"],
+[class*="card_"] {
+    border-radius: var(--xeno-cut-small) !important;
+}
+
+[class*="Dialog"],
+[class*="dialog_"],
+[class*="Modal"],
+[class*="modal_"],
+[class*="ContextMenu"],
+[class*="contextmenu_"],
+[class*="Tooltip"],
+[class*="tooltip_"] {
+    border-radius: var(--xeno-cut) !important;
+}
+
+button,
+[role="button"],
+a,
+input,
+select,
+textarea {
+    transition:
+        color 120ms ease,
+        background-color 120ms ease,
+        border-color 120ms ease,
+        box-shadow 120ms ease !important;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgb(var(--xeno-ether-hot)) !important;
+    outline-offset: 2px !important;
+    box-shadow: var(--xeno-ether-glow) !important;
+}
+
+/* Window chrome -------------------------------------------------- */
+
+.title-area,
+.TitleBar,
+[class*="titlebar_"],
+[class*="steamdesktop_TopBar"],
+[class*="supernav_"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-night), .99),
+            rgba(var(--xeno-panel), .97) 52%,
+            rgba(35, 18, 43, .99)
+        ) !important;
+    border-bottom: 1px solid transparent !important;
+    border-image:
+        linear-gradient(
+            90deg,
+            rgb(var(--xeno-ether)),
+            rgba(var(--xeno-ether), .10) 52%,
+            rgb(var(--xeno-monado))
+        ) 1 !important;
+    box-shadow:
+        0 5px 24px rgba(0, 0, 0, .35),
+        var(--xeno-ether-glow) !important;
+}
+
+.title-area .title-area-icon .SVGIcon_Button line,
+.title-area .title-area-icon .SVGIcon_Button rect,
+.title-area .title-area-icon .SVGIcon_Button polyline {
+    stroke: rgb(var(--xeno-ether)) !important;
+}
+
+.title-area .title-area-icon:hover {
+    background: rgba(var(--xeno-ether), .13) !important;
+    box-shadow: inset 0 -2px rgb(var(--xeno-ether));
+}
+
+.title-area .title-area-icon.closeButton:hover {
+    background: rgba(var(--xeno-monado), .88) !important;
+    box-shadow: var(--xeno-red-glow) !important;
+}
+
+.title-area .title-area-icon.closeButton:hover .SVGIcon_Button line {
+    stroke: rgb(var(--xeno-text)) !important;
+}
+
+[class*="supernav_MenuButton"],
+[class*="supernav_SuperNavMenu"] {
+    color: rgb(var(--xeno-muted)) !important;
+}
+
+[class*="supernav_MenuButton"]:hover,
+[class*="supernav_SuperNavMenu"]:hover,
+[class*="supernav_"][class*="Selected"] {
+    color: rgb(var(--xeno-ether-hot)) !important;
+    background: rgba(var(--xeno-ether), .12) !important;
+    box-shadow: inset 0 -2px rgb(var(--xeno-ether)) !important;
+}
+
+/* Library sidebar ------------------------------------------------ */
+
+[class*="gamelistbar_Container"],
+[class*="gamelistbar_GameListHomeAndSearch"],
+[class*="gamelist_Container"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12, 31, 57, .98),
+            rgba(var(--xeno-night), .98)
+        ) !important;
+    border-right: 1px solid var(--xeno-border) !important;
+    box-shadow: 7px 0 27px rgba(0, 0, 0, .25) !important;
+}
+
+[class*="gamelistbar_GameListHomeAndSearch"] {
+    border-bottom: 1px solid rgba(var(--xeno-ether), .22) !important;
+}
+
+[class*="gamelistbar_Container"] input,
+[class*="gamelistsearchbar_"] input,
+[class*="searchbar_SearchInput"] {
+    color: rgb(var(--xeno-text)) !important;
+    background: rgba(var(--xeno-night), .80) !important;
+    border: 1px solid rgba(var(--xeno-ether), .28) !important;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, .30) !important;
+}
+
+[class*="gamelistbar_Container"] input:focus,
+[class*="gamelistsearchbar_"] input:focus {
+    border-color: rgb(var(--xeno-ether-hot)) !important;
+    box-shadow:
+        inset 0 0 10px rgba(var(--xeno-ether), .10),
+        var(--xeno-ether-glow) !important;
+}
+
+[class*="gamelistsectionheader_"],
+[class*="gamelist_SectionHeader"] {
+    color: rgb(var(--xeno-muted)) !important;
+    border-bottom: 1px solid rgba(var(--xeno-ether), .12) !important;
+}
+
+[class*="gamelistentry_Container"],
+[class*="gamelistentry_GameListEntry"] {
+    color: rgb(197, 218, 229) !important;
+    background: transparent !important;
+    border-left: 2px solid transparent !important;
+}
+
+[class*="gamelistentry_Container"]:hover,
+[class*="gamelistentry_GameListEntry"]:hover {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-ether), .18),
+            rgba(var(--xeno-panel), .50),
+            transparent
+        ) !important;
+    border-left-color: rgb(var(--xeno-ether)) !important;
+}
+
+[class*="gamelistentry_Container"][class*="Selected"],
+[class*="gamelistentry_GameListEntry"][class*="Selected"],
+[class*="gamelistentry_Selected"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-monado), .40),
+            rgba(var(--xeno-monado), .13) 72%,
+            transparent
+        ) !important;
+    border-left-color: rgb(var(--xeno-monado-hot)) !important;
+    box-shadow:
+        inset 9px 0 15px rgba(var(--xeno-monado), .11),
+        var(--xeno-red-glow) !important;
+}
+
+/* Library home and cards ---------------------------------------- */
+
+[class*="libraryhome_Container"],
+[class*="libraryhome_LibraryHome"],
+[class*="allcollections_Container"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--xeno-night), .94),
+            rgba(var(--xeno-panel), .74)
+        ) !important;
+}
+
+[class*="shelf_Shelf"],
+[class*="libraryhomeshowcases_"],
+[class*="collectionview_"] {
+    background: rgba(var(--xeno-panel), .35) !important;
+    border: 1px solid rgba(var(--xeno-ether), .14) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .20) !important;
+}
+
+[class*="appportrait_AppPortraitBanner"],
+[class*="libraryassetimage_Container"],
+[class*="collectionview_Container"] {
+    overflow: hidden !important;
+    border: 1px solid rgba(var(--xeno-ether), .20) !important;
+    border-radius: var(--xeno-cut-small) !important;
+    background: rgba(var(--xeno-panel), .78) !important;
+    box-shadow: 0 10px 23px rgba(0, 0, 0, .32) !important;
+}
+
+[class*="appportrait_AppPortraitBanner"]:hover,
+[class*="libraryassetimage_Container"]:hover,
+[class*="collectionview_Container"]:hover {
+    border-color: rgb(var(--xeno-ether)) !important;
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, .38),
+        var(--xeno-ether-glow) !important;
+}
+
+[class*="shelf_Shelf"] [class*="Header"],
+[class*="libraryhomeshowcases_"] [class*="Header"] {
+    color: rgb(var(--xeno-text)) !important;
+    border-bottom: 1px solid rgba(var(--xeno-ether), .18) !important;
+}
+
+/* Game details and playbar -------------------------------------- */
+
+[class*="appdetails_Container"],
+[class*="appdetailssection_"],
+[class*="gamepaddetails_"] {
+    color: rgb(var(--xeno-text)) !important;
+}
+
+[class*="appdetailsplaysection_PlayBar"],
+[class*="appdetailsplaysection_Container"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-panel), .96),
+            rgba(var(--xeno-night), .94) 65%,
+            rgba(45, 19, 38, .92)
+        ) !important;
+    border-top: 1px solid rgba(var(--xeno-ether), .36) !important;
+    border-bottom: 1px solid rgba(var(--xeno-monado), .24) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .34) !important;
+}
+
+[class*="appactionbutton_PlayButton"],
+[class*="appactionbutton_Green"],
+[class*="appdetailsplaysection_PlayButton"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgb(var(--xeno-monado-hot)),
+            rgb(var(--xeno-monado)) 60%,
+            rgb(110, 13, 43)
+        ) !important;
+    border: 1px solid rgba(var(--xeno-monado-hot), .84) !important;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, .18),
+        var(--xeno-red-glow) !important;
+}
+
+[class*="appactionbutton_PlayButton"]:hover,
+[class*="appactionbutton_Green"]:hover,
+[class*="appdetailsplaysection_PlayButton"]:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgb(255, 83, 100),
+            rgb(var(--xeno-monado-hot))
+        ) !important;
+    border-color: rgb(var(--xeno-text)) !important;
+}
+
+[class*="appdetailssection_AppDetailsSectionContainer"],
+[class*="appdetailssection_Highlight"],
+[class*="activityfeed_"] {
+    background: rgba(var(--xeno-panel), .62) !important;
+    border: 1px solid rgba(var(--xeno-ether), .16) !important;
+    border-radius: var(--xeno-cut) !important;
+}
+
+[class*="achievements_"],
+[class*="achievement_"] {
+    --achievement-gold: rgb(var(--xeno-gold));
+}
+
+[class*="achievements_"] [class*="Progress"],
+[class*="achievement_"][class*="Unlocked"] {
+    color: rgb(var(--xeno-gold)) !important;
+    border-color: rgba(var(--xeno-gold), .55) !important;
+    box-shadow: 0 0 12px rgba(var(--xeno-gold), .20) !important;
+}
+
+/* Downloads and progress ---------------------------------------- */
+
+[class*="downloads_"],
+[class*="downloadgraph_"] {
+    color: rgb(var(--xeno-text)) !important;
+}
+
+[class*="downloaditem_"],
+[class*="downloads_Item"] {
+    background: rgba(var(--xeno-panel), .54) !important;
+    border: 1px solid rgba(var(--xeno-ether), .14) !important;
+}
+
+[class*="downloaditem_"]:hover,
+[class*="downloads_Item"]:hover {
+    background: rgba(var(--xeno-raised), .70) !important;
+    border-color: rgba(var(--xeno-ether), .46) !important;
+}
+
+[class*="progressbar_"],
+[class*="ProgressBar"],
+[class*="downloadgraph_HeroAndLogo"] {
+    accent-color: rgb(var(--xeno-monado)) !important;
+}
+
+[class*="progressbar_"] > div,
+[class*="ProgressBar"] > div,
+progress::-webkit-progress-value {
+    background:
+        linear-gradient(
+            90deg,
+            rgb(var(--xeno-ether)),
+            rgb(var(--xeno-monado))
+        ) !important;
+    box-shadow: var(--xeno-ether-glow) !important;
+}
+
+/* Menus, modals, settings, notifications ----------------------- */
+
+[class*="ContextMenu"],
+[class*="contextmenu_"],
+[class*="Menu_"],
+.contextMenu,
+.popup_menu,
+[class*="DialogContent"],
+[class*="ModalDialog"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--xeno-panel), .98),
+            rgba(var(--xeno-night), .99)
+        ) !important;
+    border: 1px solid rgba(var(--xeno-ether), .36) !important;
+    box-shadow: var(--xeno-shadow), var(--xeno-ether-glow) !important;
+}
+
+[class*="MenuItem"]:hover,
+[class*="menuitem_"]:hover,
+.popup_menu_item:hover {
+    color: rgb(var(--xeno-ether-hot)) !important;
+    background: rgba(var(--xeno-ether), .14) !important;
+}
+
+[class*="settings_"],
+[class*="Settings_"] {
+    color: rgb(var(--xeno-text)) !important;
+}
+
+[class*="settings_"] [class*="Sidebar"],
+[class*="Settings_"] [class*="Sidebar"] {
+    background: rgba(var(--xeno-night), .90) !important;
+    border-right: 1px solid rgba(var(--xeno-ether), .22) !important;
+}
+
+[class*="settings_"] [class*="Active"],
+[class*="Settings_"] [class*="Active"] {
+    color: rgb(var(--xeno-ether-hot)) !important;
+    background: rgba(var(--xeno-ether), .12) !important;
+    box-shadow: inset 3px 0 rgb(var(--xeno-ether)) !important;
+}
+
+[class*="notificationtoasts_"],
+[class*="notification_"][class*="Toast"] {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--xeno-panel), .98),
+            rgba(var(--xeno-night), .98)
+        ) !important;
+    border: 1px solid rgba(var(--xeno-ether), .44) !important;
+    border-left: 3px solid rgb(var(--xeno-monado)) !important;
+    box-shadow: var(--xeno-shadow), var(--xeno-ether-glow) !important;
+}
+
+/* Friends and chat ---------------------------------------------- */
+
+.friendsui-container {
+    color: rgb(var(--xeno-text)) !important;
+    background-image:
+        radial-gradient(
+            circle at 16% 0,
+            rgba(var(--xeno-ether), .16),
+            transparent 38%
+        ),
+        linear-gradient(
+            160deg,
+            rgba(var(--xeno-night), .98),
+            rgba(var(--xeno-panel), .90)
+        ) !important;
+}
+
+.friendsui-container .friendListHeaderContainer,
+.friendsui-container [class*="header_"],
+.friendsui-container [class*="titlebar_"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-night), .98),
+            rgba(var(--xeno-panel), .96),
+            rgba(35, 18, 43, .98)
+        ) !important;
+    border-bottom: 1px solid rgba(var(--xeno-ether), .44) !important;
+}
+
+.friendsui-container .friend,
+.friendsui-container [class*="friend_"][class*="Container"] {
+    background: rgba(var(--xeno-panel), .40) !important;
+    border: 1px solid transparent !important;
+}
+
+.friendsui-container .friend:hover,
+.friendsui-container [class*="friend_"][class*="Container"]:hover {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-ether), .18),
+            rgba(var(--xeno-raised), .66)
+        ) !important;
+    border-color: rgba(var(--xeno-ether), .42) !important;
+}
+
+.friendsui-container [class*="InGame"],
+.friendsui-container [class*="ingame"] {
+    color: rgb(var(--xeno-ether-hot)) !important;
+}
+
+.friendsui-container [class*="Offline"],
+.friendsui-container [class*="offline"] {
+    color: rgb(var(--xeno-muted)) !important;
+}
+
+.friendsui-container [class*="chatWindow_"],
+.friendsui-container [class*="ChatRoom_"],
+.friendsui-container .chatWindow {
+    background: rgba(var(--xeno-night), .94) !important;
+}
+
+.friendsui-container [class*="chatMessage_"],
+.friendsui-container [class*="Message_"] {
+    color: rgb(var(--xeno-text)) !important;
+}
+
+/* Store and Community web views -------------------------------- */
+
+body.v6,
+body.responsive_page {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        radial-gradient(
+            circle at 15% 0,
+            rgba(var(--xeno-ether), .14),
+            transparent 37%
+        ),
+        radial-gradient(
+            circle at 94% 100%,
+            rgba(var(--xeno-monado), .11),
+            transparent 32%
+        ),
+        rgb(var(--xeno-night)) !important;
+}
+
+body::before {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--xeno-night), .98),
+            rgba(var(--xeno-panel), .91)
+        ) !important;
+}
+
+#global_header,
+.store_nav_bg,
+.store_header,
+[class*="StoreHeader"],
+[class*="storeheader_"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--xeno-night), .99),
+            rgba(var(--xeno-panel), .97) 56%,
+            rgba(34, 18, 43, .99)
+        ) !important;
+    border-bottom: 1px solid rgba(var(--xeno-ether), .42) !important;
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, .35),
+        var(--xeno-ether-glow) !important;
+}
+
+.store_nav .tab,
+.global_action_link,
+.supernav_container > a {
+    color: rgb(var(--xeno-muted)) !important;
+}
+
+.store_nav .tab:hover,
+.store_nav .tab.focus,
+.global_action_link:hover,
+.supernav_container > a:hover {
+    color: rgb(var(--xeno-ether-hot)) !important;
+    background: rgba(var(--xeno-ether), .10) !important;
+    text-shadow: 0 0 9px rgba(var(--xeno-ether), .42) !important;
+}
+
+.game_area_purchase_game,
+.game_area_purchase_game_wrapper,
+.glance_ctn,
+.game_meta_data,
+.user_reviews,
+.responsive_reviewdesc,
+.profile_content,
+.profile_customization,
+.group_content,
+.workshopItem {
+    color: rgb(var(--xeno-text)) !important;
+    background: rgba(var(--xeno-panel), .68) !important;
+    border: 1px solid rgba(var(--xeno-ether), .17) !important;
+    border-radius: var(--xeno-cut) !important;
+}
+
+.game_area_purchase_game:hover,
+.profile_customization:hover,
+.workshopItem:hover {
+    border-color: rgba(var(--xeno-ether), .50) !important;
+    box-shadow: var(--xeno-ether-glow) !important;
+}
+
+.btn_green_steamui,
+.btn_addtocart,
+.game_purchase_action .btn_green_steamui {
+    color: rgb(var(--xeno-text)) !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgb(var(--xeno-monado-hot)),
+            rgb(var(--xeno-monado))
+        ) !important;
+    border: 1px solid rgba(var(--xeno-monado-hot), .84) !important;
+    box-shadow: var(--xeno-red-glow) !important;
+}
+
+.discount_pct,
+.discount_final_price,
+.game_purchase_price {
+    color: rgb(var(--xeno-ether-hot)) !important;
+}
+
+.profile_header_bg,
+.profile_header_bg_texture,
+.community_header {
+    background-color: rgba(var(--xeno-panel), .80) !important;
+    border-bottom: 1px solid rgba(var(--xeno-ether), .30) !important;
+}
+
+/* Reduced motion and responsive safety ------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    :root {
+        --xeno-glow-size: 10px;
+        --xeno-grid-opacity: .06;
+    }
+
+    [class*="gamelistbar_Container"] {
+        min-width: 220px !important;
+    }
+}
